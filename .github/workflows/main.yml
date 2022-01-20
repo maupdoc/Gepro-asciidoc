@@ -7,8 +7,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
+    - uses: ruby/setup-ruby@v1
     - name: Install Asciidoctor gem
-      run: gem install --user-install asciidoctor
+      run: gem install asciidoctor
     - name: Build documents
       run: |
         asciidoctor --version
