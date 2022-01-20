@@ -21,7 +21,7 @@ jobs:
     - name: Build documents
       run: |
         asciidoctor --version
-        asciidoctor *.adoc
+        find . -name "*.adoc" | xargs asciidoctor
     - name: Commit and Push
       run: |
         git config user.name github-actions
