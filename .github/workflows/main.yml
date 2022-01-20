@@ -8,7 +8,7 @@ jobs:
     steps:
     - uses: actions/checkout@master
     - name: Install Asciidoctor gem
-      run: gem install asciidoctor
+      run: gem install --user-install asciidoctor
     - name: Build documents
       run: |
         asciidoctor --version
