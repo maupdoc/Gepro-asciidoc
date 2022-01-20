@@ -12,14 +12,20 @@ jobs:
         ruby-version: 2.6
     - name: Install Asciidoctor gem
       run: gem install asciidoctor
+    - name: Recreate gh-pages
+      run: |
+        git branch -D gh-pages 1>/dev/null 2>/dev/null || true
+        git checkout -q --orphan gh-pages 1>/dev/null
+        mv ./docs/* .
+        rm -rf .github
     - name: Build documents
       run: |
         asciidoctor --version
-        asciidoctor docs/*.adoc
+        asciidoctor *.adoc
     - name: Commit and Push
       run: |
         git config user.name github-actions
         git config user.email github-actions@github.com
-        git add ./docs
+        git add .
         git commit -m "Asciidoc build"
         git push
