@@ -8,6 +8,8 @@ jobs:
     steps:
     - uses: actions/checkout@master
     - uses: ruby/setup-ruby@v1
+      with:
+        ruby-version: 2.6
     - name: Install Asciidoctor gem
       run: gem install asciidoctor
     - name: Build documents
