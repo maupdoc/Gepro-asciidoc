@@ -22,6 +22,8 @@ jobs:
       run: |
         asciidoctor --version
         find . -name "*.adoc" | xargs asciidoctor
+    - name: Clean adoc files
+      run: find . -name "*.adoc" | xargs rm -rf
     - name: Commit and Push
       run: |
         git config user.name github-actions
