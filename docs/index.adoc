@@ -1,0 +1,5 @@
+= Documento index
+
+Esse é meu texto
+
+include::teste.adoc[]
