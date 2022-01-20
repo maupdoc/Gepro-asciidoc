@@ -28,4 +28,4 @@ jobs:
         git config user.email github-actions@github.com
         git add .
         git commit -m "Asciidoc build"
-        git push
+        git push -f --set-upstream origin gh-pages
